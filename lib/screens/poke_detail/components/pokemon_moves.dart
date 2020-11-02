@@ -12,7 +12,6 @@ class PokemonMoves extends StatelessWidget {
   final String nombrePokemon;
   final String tipo;
   PokemonMoves({this.nombrePokemon, this.tipo});
-  List<Moves> moves = [];
   ApiProvider apiProvider = ApiProvider();
   @override
   Widget build(BuildContext context) {

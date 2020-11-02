@@ -59,6 +59,7 @@ class ApiProvider {
       Response respB = await dio.get(
           'https://pokeapi.co/api/v2/pokemon-species/${pokeStatDetail.id}');
       final pokeStatSpecies = PokeStatsSpecies.fromJson(respB.data);
+      print(pokeStatSpecies);
       pokeStats = PokemonStatsModel(
           pokeStatDetail: pokeStatDetail, pokeStatSpecies: pokeStatSpecies);
     } catch (e) {}
@@ -72,11 +73,11 @@ class ApiProvider {
       Response respA =
           await dio.get('https://pokeapi.co/api/v2/pokemon/$nombrePoke');
       final pokemonDetail = PokemonEvolutionDetail.fromJson(respA.data);
-      Response respB = await dio
-          .get('https://pokeapi.co/api/v2/pokemon-species/${pokemonDetail.id}');
+      Response respB = await dio.get(
+          'https://pokeapi.co/api/v2/pokemon-species/${pokemonDetail.id}/');
       final pokemonSpecies = PokemonEvolutionSpecies.fromJson(respB.data);
-      Response respC = await dio
-          .get('https://pokeapi.co/api/v2/evolution-chain/${pokemonDetail.id}');
+      Response respC = await dio.get(
+          'https://pokeapi.co/api/v2/evolution-chain/${pokemonDetail.id}/');
       final pokemonChain = PokemonEvolutionChain.fromJson(respC.data);
       pokeEvolution = PokemonEvolutionModel(
           pokemonDetail: pokemonDetail,
