@@ -149,7 +149,8 @@ class _PokemonDetailScreenState extends State<PokemonDetailScreen>
                           nombrePokemon: widget.pokemon.name.toLowerCase(),
                         ),
                         PokemonEvolutions(
-                            nombrePokemon: widget.pokemon.name.toLowerCase()),
+                          nombrePokemon: widget.pokemon.name.toLowerCase(),
+                        ),
                         PokemonMoves(
                           nombrePokemon: widget.pokemon.name.toLowerCase(),
                           tipo: widget.pokemon.type1,
